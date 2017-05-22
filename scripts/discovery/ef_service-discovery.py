@@ -99,11 +99,11 @@ def execute(params, display=False):
                         sys.stderr.write(line +'\n')
 
     # Wait until completion of the process
-    while p.returefode == None:
+    while p.returncode == None:
         p.poll()
 
     # return a tuple (code, stdout, stderr)
-    return p.returefode, '\n'.join(results[0]), '\n'.join(results[1])
+    return p.returncode, '\n'.join(results[0]), '\n'.join(results[1])
 
 def jmx_discovery():
     # Get Java bin
